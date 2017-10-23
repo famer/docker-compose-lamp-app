@@ -1,0 +1,17 @@
+db:
+    image: famer/docker-lamp:mariadb-10.1.28
+    restart: always
+    container_name: db
+    environment:
+        #Change following immediately
+        MYSQL_ROOT_PASSWORD: password1
+    volumes:
+        - ./data:/var/lib/mysql
+web:
+    image: famer/docker-lamp:lap-5.6.31
+    links:
+        - db
+    ports:
+        - 80:80
+    volumes:
+        - ./app:/var/www/html
