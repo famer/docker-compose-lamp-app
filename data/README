@@ -1,0 +1,2 @@
+Put your .sql, .sql.gz .sh files into this folder and they will be executed.  
+.sql and .sql.gz files run only once when database isn't created yet. 
